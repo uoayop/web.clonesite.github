@@ -5,6 +5,10 @@
     font-weight: 400;
     color: #333;
 }
+a{
+  text-decoration: none;
+}
+
 
 /* btn */
 .btn{
@@ -20,7 +24,8 @@
 	line-height: 1.5px;
 	cursor: pointer;
 	box-sizing: border-box;
-	position: relative;
+  position: relative;
+  color: #333;
 }
 .btn:hover::before{
 	content: "";
@@ -59,3 +64,94 @@
   .input--text::-webkit-input-placeholder { color:#cacaca; }
   .input--text::-ms-input-placeholder { color:#cacaca; }
   .input--text::-moz-input-placeholder { color:#cacaca; }
+
+
+  /* FLOAT CLEARFIX */
+  .clearfix::after{
+    content : "";
+    clear: both;
+    display: block;
+  }
+  .float--left{
+    float: left;
+  }
+  .float--right{
+    float: right;
+  }
+
+  /* HEADER */
+  header{
+    border-bottom: 1px soild rgba(0,0,0,.75);
+    box-shadow: 0 0 5px rgba(0,0,0,.75);
+    background: #fff;
+  }
+  header .inner{
+    max-width: 980px;
+    height: 78px;
+    margin: 0 auto; /* 가로 사이즈가 정의되어 있을 때 margin을 0, auto로 가운데 정렬을 할 수 있다.*/
+    
+  }
+  header .menu-group{
+    display: flex;  /* 수평정렬이 됨 */
+    align-items: center;
+    height: 100%;
+  }
+  header .logo{
+    margin-right: 10px;
+  }
+  header .logo a{
+    width: 32px;
+    height: 32px;
+    display: block;
+    background: url("../img/logo.svg");
+    text-indent: -9999px; /* a태그에 정의된 문자를 사라지게 만들어서 대체텍스트로 사용 가능하다. */
+  }
+  header .main-menu{
+    display: flex;
+  }
+  header .main-menu li a{
+    display: block;
+    padding: 10px;
+    color: #3c4146;
+  }
+  header .main-menu li a:hover{
+    color: #4078c0;
+  }
+  header .sign-group{
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+  header .btn-group{
+    order: 2;
+    display: flex;
+  }
+  header .btn-group .sign-in{
+    margin-right: 4px;
+  }
+  #search-form{
+    order: 1;
+    margin-right: 12px;
+  }
+  #search {
+    width: 160px;
+    font-size: 14px;
+  }
+  /* search의 다음 형제 요소 중 type이 submit인 요소 선택 */
+  #search + [type="submit"] {
+    display: none;
+  }
+  header .sub-menu{
+    order: 0;
+    display: flex;
+    margin-right: 10px;
+  }
+  header .sub-menu li a{
+    display: block;
+    padding: 8px;
+    font-size: 13px;
+    color: #3c4146;
+  }
+  header .sub-menu li a:hover{
+    color: #4078c0;
+  }
